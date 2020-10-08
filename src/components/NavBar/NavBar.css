@@ -1,0 +1,129 @@
+.custom-nav {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: repeat(7, 14.5%);
+  -ms-grid-columns: 14.5% 14.5% 14.5% 14.5% 14.5% 14.5% 14.5%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: bold;
+  width: 100%;
+  position: relative;
+  height: 50px;
+  font-size: 1.5vw;
+}
+
+.custom-nav-container {
+  display: flex;
+  display: -ms-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  height: 90%;
+}
+
+.custom-nav-container:nth-child(2) {
+  -ms-grid-column: 2;
+}
+
+.custom-nav-container:nth-child(3) {
+  -ms-grid-column: 3;
+}
+
+.custom-nav-container:nth-child(4) {
+  -ms-grid-column: 4;
+}
+
+.custom-nav-container:nth-child(5) {
+  -ms-grid-column: 5;
+}
+
+.custom-nav-container:nth-child(6) {
+  -ms-grid-column: 6;
+}
+
+.custom-nav-container:nth-child(7) {
+  -ms-grid-column: 7;
+}
+
+.custom-nav-container:nth-child(8) {
+  -ms-grid-column: 8;
+}
+
+.custom-nav-container:hover {
+  color: orange;
+  border-bottom: 3px solid orange;
+}
+
+.nav-submenu {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: repeat(7, 14.5%);
+  -ms-grid-columns: 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  width: 100%;
+  color: grey;
+  font-weight: bold;
+  position: absolute;
+  top: 50px;
+  background-color: white;
+  z-index: 1;
+  padding: 15px 0;
+  opacity: 0.9;
+}
+
+.nav-submenu-box:nth-child(2) {
+  -ms-grid-column: 3;
+}
+
+.nav-submenu-box:nth-child(3) {
+  -ms-grid-column: 5;
+}
+
+.nav-submenu-box:nth-child(4) {
+  -ms-grid-column: 7;
+}
+
+.nav-submenu-box:nth-child(5) {
+  -ms-grid-column: 9;
+}
+
+.nav-submenu-box:nth-child(6) {
+  -ms-grid-column: 11;
+}
+
+.nav-submenu-box:nth-child(7) {
+  -ms-grid-column: 13;
+}
+
+.custom-nav-container:hover {
+  color: orange;
+  border-bottom: 3px solid orange;
+}
+
+.nav-submenu-container {
+  display: flex;
+  display: -ms-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 1.25vw;
+}
+
+.nav-submenu-container:hover {
+  color: orange;
+}
