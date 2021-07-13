@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo.jpg";
+import logo from "../../assets/logo.png";
 import sns1 from "../../assets/sns1.png";
 import sns2 from "../../assets/sns2.png";
 import sns3 from "../../assets/sns3.jpg";
@@ -10,9 +10,10 @@ class Header extends React.Component {
     return (
       <header style={{ fontSize: "2vw" }}>
         <div style={{ width: "100px" }}></div>
-        <div href="/">
-          <img src={logo} alt={"logo"} className={"headerImage"} />
-          BODY WORK
+        <div>
+          <a href="/">
+            <img src={logo} alt={"logo"} className="header-image" />
+          </a>
         </div>
         <div className={"snsWrapper"}>
           <a href={"https://cafe.naver.com/bodywork119"}>

@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 // import "./Carousel1.css";
-import main1 from "../../assets/main.jpg";
-import main2 from "../../assets/main2-word.png";
-import main3 from "../../assets/main4.jpg";
+import main1 from "../../assets/main1.png";
+import main2 from "../../assets/main2.jpeg";
+import main3 from "../../assets/main3.png";
 
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption,
 } from "reactstrap";
 
 const items = [
@@ -63,7 +62,7 @@ const Carousel1 = (props) => {
         onExited={() => setAnimating(false)}
         key={item.id}
       >
-        <img src={item.src} alt={item.altText} width={"100%"}/>
+        <img src={item.src} alt={item.altText} width={"100%"} />
       </CarouselItem>
     );
   });
@@ -71,11 +70,10 @@ const Carousel1 = (props) => {
   return (
     <div>
       <style>
-        {
-          `
+        {`
             .custom-tag {
               max-width: 100%;
-              height: 700px;
+              // height: 700px;
               background: black;
             }
             .custom-indicator {
@@ -89,29 +87,28 @@ const Carousel1 = (props) => {
             .custom-indicator .active {
               background-color: orange;
             }
-          `
-        }
+          `}
       </style>
       <Carousel activeIndex={activeIndex} next={next} previous={previous}>
-      <CarouselIndicators
-        className="custom-indicator"
-        items={items}
-        activeIndex={activeIndex}
-        onClickHandler={goToIndex}
-      />
-      {slides}
-      <CarouselControl
-        direction="prev"
-        directionText="Previous"
-        onClickHandler={previous}
-      />
-      <CarouselControl
-        direction="next"
-        directionText="Next"
-        onClickHandler={next}
-      />
-    </Carousel>
-  </div>
+        <CarouselIndicators
+          className="custom-indicator"
+          items={items}
+          activeIndex={activeIndex}
+          onClickHandler={goToIndex}
+        />
+        {slides}
+        <CarouselControl
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={previous}
+        />
+        <CarouselControl
+          direction="next"
+          directionText="Next"
+          onClickHandler={next}
+        />
+      </Carousel>
+    </div>
   );
 };
 

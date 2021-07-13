@@ -1,5 +1,5 @@
 header {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   font-weight: bold;
   text-align: center;
@@ -11,13 +11,6 @@ header a {
   font-size: 15px;
 }
 
-.headerImage {
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
-  margin-right: 10px;
-}
-
 .footerImage {
   width: 130px;
   height: 130px;
@@ -26,4 +19,55 @@ header a {
 
 .snsWrapper {
   width: 100px;
+}
+
+@media screen and (min-width: 1441px) and (orientation: landscape) {
+    .header-image {
+        width: 600px;
+        height: 150px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .header-image {
+      width: 480px;
+      height: 120px;
+  }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .header-image {
+      width: 480px;
+      height: 120px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header-image {
+      width: 320px;
+      height: 80px;
+  }
+}
+
+@media (orientation: portrait) {
+  header {
+    display: block !important;
+    justify-content: space-between;
+  }
+  
+  .header-image {
+    width: 320px;
+    height: 80px;
+  }
+
+  .snsWrapper {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+  .header-image {
+      width: 200px;
+      height: 50px;
+  }
 }
