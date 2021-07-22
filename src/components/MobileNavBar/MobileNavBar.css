@@ -1,4 +1,8 @@
 
+.custom-navbar {
+  display: none;
+}
+
 @media (orientation: portrait) {
   .custom-nav {
       display: none;

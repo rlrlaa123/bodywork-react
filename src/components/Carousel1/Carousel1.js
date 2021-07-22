@@ -73,7 +73,6 @@ const Carousel1 = (props) => {
         {`
             .custom-tag {
               max-width: 100%;
-              // height: 700px;
               background: black;
             }
             .custom-indicator {

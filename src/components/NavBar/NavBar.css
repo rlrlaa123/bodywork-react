@@ -128,6 +128,15 @@
   color: orange;
 }
 
+.nav-submenu-container a {
+  color: grey;
+}
+
+.nav-submenu-container a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
 @media (orientation: portrait) {
   .sidenav {
     display: block;

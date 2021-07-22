@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 class NavBar extends React.Component {
@@ -50,7 +51,7 @@ class NavBar extends React.Component {
           <div className={"nav-submenu-box"}></div>
           <div className={"nav-submenu-box 0}"}>
             <div className={"nav-submenu-container"}>
-              <div>CEO 인사말</div>
+              <Link to="/bodywork/1">CEO 인사말</Link>
             </div>
             <div className={"nav-submenu-container"}>
               <div>바디웍 소개</div>

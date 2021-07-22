@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import sns1 from "../../assets/sns1.png";
 import sns2 from "../../assets/sns2.png";
@@ -11,9 +12,9 @@ class Header extends React.Component {
       <header style={{ fontSize: "2vw" }}>
         <div style={{ width: "100px" }}></div>
         <div>
-          <a href="/">
+          <Link to="/">
             <img src={logo} alt={"logo"} className="header-image" />
-          </a>
+          </Link>
         </div>
         <div className={"snsWrapper"}>
           <a href={"https://cafe.naver.com/bodywork119"}>
