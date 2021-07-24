@@ -1,1 +1,6 @@
-migrate bodywork119 page from Laravel to React
+## 프로젝트 목적 및 개요
+
+1. bodywork119.com 페이지를 react로 변환하는 프로젝트입니다.
+2. SPA로 개발하여 사용자 경험을 향상 시키고 css component library를 사용하여 사용성, 디자인 면에서 더 나은 경험을 제공하고자 합니다.
+추후 효율적인 유지보수를 위해 Component 기반으로 기존 중복되는 부분들을 최소화하고 테스트 프레임워크를 적용하여 오류를 최소화하고자 합니다.
+3. 기존 검색엔진 노출을 유지하기 위해 SSR이 가능하게 개발하여 배포하고자 합니다.
