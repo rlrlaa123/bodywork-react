@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.MuiImageListItem-root {
+  height: unset !important;
+}
+.MuiImageListItem-item {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 50px;
+}
+
+/* .imageListItem {
+  height: 450px !important;
+}
+
+.imageListItem img {
+  height: unset;
+} */
+/* .imageList { */
+  /* width: 100%; */
+  /* height: 450px !important; */
+/* } */
+
+/* .imageListItem {} */

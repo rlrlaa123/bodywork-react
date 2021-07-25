@@ -57,7 +57,7 @@ class NavBar extends React.Component {
               <div>바디웍 소개</div>
             </div>
             <div className={"nav-submenu-container"}>
-              <div>제휴 업체</div>
+              <Link to="/bodywork/3">제휴 업체</Link>
             </div>
           </div>
           <div className={"nav-submenu-box 1"}>

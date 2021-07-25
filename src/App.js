@@ -5,7 +5,9 @@ import MobileNavBar from "./components/MobileNavBar/MobileNavBar";
 import { Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Carousel1 from "./components/Carousel1/Carousel1";
-import CEO from "./views/CEO";
+import CEO from "./views/CEO/CEO";
+import Branch from "./views/Branch/Branch";
+import Alliance from "./views/Alliance/Alliance";
 
 const meta = {
   name: "viewport",
@@ -20,6 +22,8 @@ function App() {
       <NavBar></NavBar>
       <Route path="/" component={Carousel1} exact={true} />
       <Route path="/bodywork/1" component={CEO} />
+      <Route path="/branch/1" component={Branch} />
+      <Route path="/bodywork/3" component={Alliance} />
     </div>
   );
 }
