@@ -11,11 +11,14 @@ import "./Alliance.css";
 class Alliance extends React.Component {
   render() {
     var pageNum = new RegExp("page=(.+?)").exec(this.props.location.search);
+
     return (
       <Container>
         <MenuTitle title={"제휴업체"} />
         <Container className={"root"}>
-          <ImageList itemData={itemData[pageNum[1] - 1]} />
+          <ImageList
+            itemData={pageNum === null ? itemData[0] : itemData[pageNum[1] - 1]}
+          />
           <Pagination itemData={itemData} />
         </Container>
       </Container>

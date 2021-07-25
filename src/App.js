@@ -8,6 +8,7 @@ import Carousel1 from "./components/Carousel1/Carousel1";
 import CEO from "./views/CEO/CEO";
 import Branch from "./views/Branch/Branch";
 import Alliance from "./views/Alliance/Alliance";
+import Notice from "./views/Notice/Notice";
 
 const meta = {
   name: "viewport",
@@ -24,6 +25,7 @@ function App() {
       <Route path="/bodywork/1" component={CEO} />
       <Route path="/branch/1" component={Branch} />
       <Route path="/bodywork/3" component={Alliance} />
+      <Route path="/notice" component={Notice} />
     </div>
   );
 }

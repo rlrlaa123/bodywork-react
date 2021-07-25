@@ -89,7 +89,7 @@ class NavBar extends React.Component {
           </div>
           <div className={"nav-submenu-box 4"}>
             <div className={"nav-submenu-container"}>
-              <div>공지사항</div>
+              <Link to="/notice">공지사항</Link>
             </div>
             <div className={"nav-submenu-container"}>
               <div>이벤트</div>
