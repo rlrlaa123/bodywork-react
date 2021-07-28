@@ -4,6 +4,9 @@ import { Table as TableComponent } from "reactstrap";
 import "./Table.css";
 
 class Table extends React.Component {
+  handleClick = (id) => {
+    this.props.history.push("/notice/" + id);
+  };
   render() {
     const itemData = this.props.itemData;
     const itemDataKeys = Object.keys(itemData[0]);
@@ -17,14 +20,22 @@ class Table extends React.Component {
     };
     const tbody = () => {
       const result = [];
-      itemData.map((item) => {
+      itemData.forEach((item) => {
         const itemDataValues = [];
         for (let i = 0; i < itemDataKeys.length; i++) {
           itemDataValues.push(
             <td key={itemDataKeys[i]}>{item[itemDataKeys[i]]}</td>
           );
         }
-        result.push(<tr key={item.id}>{itemDataValues}</tr>);
+        result.push(
+          <tr
+            key={item.id}
+            value={item.id}
+            onClick={() => this.handleClick(item.id)}
+          >
+            {itemDataValues}
+          </tr>
+        );
       });
       return result;
     };
