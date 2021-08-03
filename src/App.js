@@ -9,6 +9,7 @@ import CEO from "./views/CEO/CEO";
 import Branch from "./views/Branch/Branch";
 import Alliance from "./views/Alliance/Alliance";
 import Notice from "./views/Notice/Notice";
+import NoticeShow from "./views/NoticeShow/NoticeShow";
 
 const meta = {
   name: "viewport",
@@ -25,7 +26,8 @@ function App() {
       <Route path="/bodywork/1" component={CEO} />
       <Route path="/branch/1" component={Branch} />
       <Route path="/bodywork/3" component={Alliance} />
-      <Route path="/notice" component={Notice} />
+      <Route path="/notice" exact component={Notice} />
+      <Route path="/notice/:noticeId" component={NoticeShow} />
     </div>
   );
 }
