@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container";
 import MenuTitle from "../../components/MenuTitle/MenuTitle";
 import ImageList from "../../components/ImageList/ImageList";
 import Pagination from "../../components/Pagination/Pagination";
-import itemData from "./itemData";
+import store from "../../store/store";
 
 import "./Alliance.css";
 
@@ -17,9 +17,17 @@ class Alliance extends React.Component {
         <MenuTitle title={"제휴업체"} />
         <Container className={"root"}>
           <ImageList
-            itemData={pageNum === null ? itemData[0] : itemData[pageNum[1] - 1]}
+            itemData={
+              pageNum === null
+                ? store["alliance"].slice(0, store.pagination)
+                : store["alliance"].slice(
+                    (pageNum[1] - 1) * store.pagination,
+                    (pageNum[1] - 1) * store.pagination + store.pagination
+                  )
+            }
+            itemDataKeys={Object.keys(store["alliance"][0])}
           />
-          <Pagination itemData={itemData} />
+          <Pagination itemData={store["alliance"]} length={store.pagination} />
         </Container>
       </Container>
     );

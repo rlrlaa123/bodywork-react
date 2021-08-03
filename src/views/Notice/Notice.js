@@ -5,9 +5,9 @@ import CoverImage from "../../components/CoverImage/CoverImage";
 import MenuTitle from "../../components/MenuTitle/MenuTitle";
 import Table from "../../components/Table/Table";
 import Pagination from "../../components/Pagination/Pagination";
-import itemData from "./itemData";
 import banner1 from "../../assets/banner2.png";
 import "./Notice.css";
+import store from "../../store/store";
 
 class Notice extends React.Component {
   render() {
@@ -19,10 +19,18 @@ class Notice extends React.Component {
         <Container>
           <MenuTitle title={"공지사항"} />
           <Table
-            itemData={pageNum === null ? itemData[0] : itemData[pageNum[1] - 1]}
+            itemData={
+              pageNum === null
+                ? store["notice"].slice(0, store.pagination)
+                : store["notice"].slice(
+                    (pageNum[1] - 1) * store.pagination,
+                    (pageNum[1] - 1) * store.pagination + store.pagination
+                  )
+            }
+            itemDataKeys={Object.keys(store["notice"][0])}
             history={this.props.history}
           />
-          <Pagination itemData={itemData} />
+          <Pagination itemData={store["notice"]} length={store.pagination} />
         </Container>
       </div>
     );

@@ -7,10 +7,10 @@ import "./Pagination.css";
 
 class Pagination extends React.Component {
   render() {
-    const { itemData } = this.props;
+    const { itemData, length } = this.props;
     const pagination = () => {
       const result = [];
-      for (let i = 1; i <= itemData.length; i++) {
+      for (let i = 1; i <= itemData.length / length; i++) {
         result.push(
           <PaginationItem key={i}>
             <Link to={"?page=" + i}>

@@ -8,9 +8,7 @@ class Table extends React.Component {
     this.props.history.push("/notice/" + id);
   };
   render() {
-    const itemData = this.props.itemData;
-    const itemDataKeys = Object.keys(itemData[0]);
-
+    const { itemData, itemDataKeys } = this.props;
     const thead = () => {
       const result = [];
       for (let i = 0; i < itemDataKeys.length; i++) {
