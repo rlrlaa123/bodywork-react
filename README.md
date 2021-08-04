@@ -11,3 +11,17 @@
 2. (본문) 무엇을 어떻게 왜 했는지에 대한 설명
 3. (본문) 가독성을 위해 본문을 나누어서 설명
 4. (제목&본문) 두괄식으로 강조하고 싶은 단어부터 문장을 시작
+
+### React 개발 방식
+참조: https://github.com/rlrlaa123/bodywork-react/wiki/React-Reference-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0
+1. 설정 파일 만들기 (.prettierrc, jsonconfig.json)
+2. 라우트 적용 (라우트 구조는 미리 설계)
+3. 스타일 설정 (styled-component 방식 사용)
+4. Common 컴포넌트 만들기 (components/common)
+5. 리덕스 적용 (리덕스 스토어를 생성하고 Provider 컴포넌트를 통해 리덕스 적용/Ducks 패턴) (modules/)
+6. UI 준비하기 (Template/Component)
+  - Template은 일반 component들을 children으로 갖고 해당 component들의 layout
+7. Snippet 기능을 사용해서 Template Component를 작성
+8. 컴포넌트 재사용하기 (props를 통해 인자 전달받음)
+  - common 컴포넌트(Button)와 같은 경우 props 인자에 따라 css를 추가 적용 하도록 설정
+  - AuthForm(Login, Register)와 같은 경우 props 인자에 따라 text 밑 element등을 추가 적용 하도록 설정
