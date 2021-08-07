@@ -50,11 +50,7 @@ class MobileNavBar extends React.Component {
           }}
         >
           <img alt="logo" src={logo} className="navbar-logo" width="25px" />
-          <span
-            href={`javascript:void(0)`}
-            className="closebtn"
-            onClick={this.hideNavBar}
-          >
+          <span className="closebtn" onClick={this.hideNavBar}>
             &times;
           </span>
           <div className="navbar-menu home">
