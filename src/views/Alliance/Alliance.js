@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 
-import MenuTitle from "../../components/MenuTitle/MenuTitle";
+import MenuTitle from "../../components/common/MenuTitle/MenuTitle";
 import ImageList from "../../components/ImageList/ImageList";
 import Pagination from "../../components/Pagination/Pagination";
 import store from "../../store/store";

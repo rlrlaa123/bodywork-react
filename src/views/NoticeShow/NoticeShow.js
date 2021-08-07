@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import styled from "styled-components";
 
-import MenuTitle from "../../components/MenuTitle/MenuTitle";
+import MenuTitle from "../../components/common/MenuTitle/MenuTitle";
 import { Table } from "reactstrap";
 import "./NoticeShow.css";
 import store from "../../store/store";
