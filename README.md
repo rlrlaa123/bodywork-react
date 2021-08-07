@@ -18,6 +18,8 @@
 1. 설정 파일 만들기 (.prettierrc, jsonconfig.json)
 2. 라우트 적용 (라우트 구조는 미리 설계)
 3. 스타일 설정 (styled-component 방식 사용)
+  - 엘리먼트 css (header, a, button 등) 선언은 StyledCss로 선언 (css 파일에 선언하면 global로 영향을 주기 때문에)
+  - class를 사용하는 엘리먼트들은 css파일에 설정
 4. Common 컴포넌트 만들기 (components/common)
 5. 리덕스 적용 (리덕스 스토어를 생성하고 Provider 컴포넌트를 통해 리덕스 적용/Ducks 패턴) (modules/)
 6. UI 준비하기 (Template/Component)
