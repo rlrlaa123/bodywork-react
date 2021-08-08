@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header/Header";
+import Header from "./components/common/Header/Header";
 import MobileNavBar from "./components/MobileNavBar/MobileNavBar";
 import { Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Carousel1 from "./components/Carousel1/Carousel1";
 import CEO from "./views/CEO/CEO";
 import Branch from "./views/Branch/Branch";
-import Alliance from "./views/Alliance/Alliance";
+import AlliancePage from "./views/AlliancePage/AlliancePage";
 import Notice from "./views/Notice/Notice";
 import NoticeShow from "./views/NoticeShow/NoticeShow";
 
@@ -25,7 +25,7 @@ function App() {
       <Route path="/" component={Carousel1} exact={true} />
       <Route path="/bodywork/1" component={CEO} />
       <Route path="/branch/1" component={Branch} />
-      <Route path="/bodywork/3" component={Alliance} />
+      <Route path="/bodywork/3" component={AlliancePage} />
       <Route path="/notice" exact component={Notice} />
       <Route path="/notice/:noticeId" component={NoticeShow} />
     </div>
