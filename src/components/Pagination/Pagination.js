@@ -10,7 +10,7 @@ class Pagination extends React.Component {
     const { itemData, length } = this.props;
     const pagination = () => {
       const result = [];
-      for (let i = 1; i <= itemData.length / length; i++) {
+      for (let i = 1; i <= Math.ceil(itemData.length / length); i++) {
         result.push(
           <PaginationItem key={i}>
             <Link to={"?page=" + i}>

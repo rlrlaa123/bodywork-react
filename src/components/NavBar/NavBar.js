@@ -84,7 +84,7 @@ class NavBar extends React.Component {
               <div>바디웍챌린져란?</div>
             </div>
             <div className={"nav-submenu-container"}>
-              <div>Before & After</div>
+              <Link to="/bodychallenger/2">Before & After</Link>
             </div>
           </div>
           <div className={"nav-submenu-box 4"}>

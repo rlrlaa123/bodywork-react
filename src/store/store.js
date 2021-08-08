@@ -1,9 +1,15 @@
 import alliance1 from "../assets/alliance1.png";
 import alliance2 from "../assets/alliance2.png";
 import alliance3 from "../assets/alliance3.jpeg";
+import beforeAfter1 from "../assets/body_challenger/beforeafter1.jpeg";
+import beforeAfter2 from "../assets/body_challenger/beforeafter2.jpeg";
+import beforeAfter3 from "../assets/body_challenger/beforeafter3.png";
+import beforeAfter4 from "../assets/body_challenger/beforeafter4.jpeg";
+import beforeAfter5 from "../assets/body_challenger/beforeafter5.png";
+import beforeAfter6 from "../assets/body_challenger/beforeafter6.jpeg";
 
 const store = {
-  pagination: 3,
+  pagination: 6,
   alliance: [
     {
       id: 1,
@@ -55,6 +61,38 @@ const store = {
       id: 9,
       img: alliance3,
       title: "3D프린터, 피규어, 구체관절인형 제작시 10% 할인합니다.!",
+    },
+  ],
+  beforeAfter: [
+    {
+      id: 1,
+      img: beforeAfter1,
+      title: "",
+    },
+    {
+      id: 2,
+      img: beforeAfter2,
+      title: "",
+    },
+    {
+      id: 3,
+      img: beforeAfter3,
+      title: "",
+    },
+    {
+      id: 4,
+      img: beforeAfter4,
+      title: "",
+    },
+    {
+      id: 5,
+      img: beforeAfter5,
+      title: "",
+    },
+    {
+      id: 6,
+      img: beforeAfter6,
+      title: "",
     },
   ],
   notice: [

@@ -6,7 +6,7 @@ import banner from "../../assets/banner1.jpeg";
 const AlliancePage = (props) => {
   return (
     <PageTemplate title="제휴업체" image={banner}>
-      <ImageListForm url={props.location.search} />
+      <ImageListForm url={props.location.search} type={"alliance"} />
     </PageTemplate>
   );
 };
