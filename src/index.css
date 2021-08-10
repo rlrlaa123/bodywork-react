@@ -20,3 +20,7 @@ a:hover {
   text-decoration: none;
   color: inherit;
 }
+
+tr {
+  cursor: pointer;
+}

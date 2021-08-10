@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import Container from "@material-ui/core/Container";
 
@@ -12,15 +12,25 @@ const PageTemplateBlock = styled.div`
   justify-content: space-around;
   overflow: hidden;
   background-color: #fff;
+  ${(props) => {
+    return (
+      props.type === "dashboard" &&
+      css`
+        display: block;
+      `
+    );
+  }}
 `;
 
-const PageTemplate = ({ children, title, image }) => {
+const PageTemplate = (props) => {
   return (
     <div>
-      <CoverImage src={image} />
-      <MenuTitle title={title} />
+      <CoverImage src={props.image} />
+      <MenuTitle title={props.title} />
       <Container>
-        <PageTemplateBlock>{children}</PageTemplateBlock>
+        <PageTemplateBlock type={props.type}>
+          {props.children}
+        </PageTemplateBlock>
       </Container>
     </div>
   );

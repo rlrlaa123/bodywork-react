@@ -3,8 +3,6 @@ import { PaginationItem, PaginationLink } from "reactstrap";
 import { Pagination as PaginationComponent } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import "./Pagination.css";
-
 class Pagination extends React.Component {
   render() {
     const { itemData, length } = this.props;

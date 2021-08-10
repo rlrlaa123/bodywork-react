@@ -9,7 +9,7 @@ import CEO from "./views/CEO/CEO";
 import Branch from "./views/Branch/Branch";
 import AlliancePage from "./views/AlliancePage/AlliancePage";
 import BeforeAfterPage from "./views/BeforeAfterPage/BeforeAfterPage";
-import Notice from "./views/Notice/Notice";
+import NoticePage from "./views/NoticePage/NoticePage";
 import NoticeShow from "./views/NoticeShow/NoticeShow";
 
 const meta = {
@@ -28,7 +28,7 @@ function App() {
       <Route path="/branch/1" component={Branch} />
       <Route path="/bodywork/3" component={AlliancePage} />
       <Route path="/bodychallenger/2" component={BeforeAfterPage} />
-      <Route path="/notice" exact component={Notice} />
+      <Route path="/notice" exact component={NoticePage} />
       <Route path="/notice/:noticeId" component={NoticeShow} />
     </div>
   );
