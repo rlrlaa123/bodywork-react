@@ -10,7 +10,7 @@ import Branch from "./views/Branch/Branch";
 import AlliancePage from "./views/AlliancePage/AlliancePage";
 import BeforeAfterPage from "./views/BeforeAfterPage/BeforeAfterPage";
 import NoticePage from "./views/NoticePage/NoticePage";
-import NoticeShow from "./views/NoticeShow/NoticeShow";
+import NoticeShowPage from "./views/NoticeShowPage/NoticeShowPage";
 
 const meta = {
   name: "viewport",
@@ -29,7 +29,7 @@ function App() {
       <Route path="/bodywork/3" component={AlliancePage} />
       <Route path="/bodychallenger/2" component={BeforeAfterPage} />
       <Route path="/notice" exact component={NoticePage} />
-      <Route path="/notice/:noticeId" component={NoticeShow} />
+      <Route path="/notice/:noticeId" component={NoticeShowPage} />
     </div>
   );
 }
