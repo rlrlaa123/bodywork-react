@@ -14,7 +14,7 @@ const StyledTh = styled.th`
 `;
 
 const DashBoardShowForm = ({ pathname, type }) => {
-  var pageId = parseInt(new RegExp("notice/(.+?)").exec(pathname)[1]) - 1;
+  var pageId = parseInt(new RegExp(`${type}/(.+?)`).exec(pathname)[1]) - 1;
   return (
     <div>
       <Table bordered responsive>
@@ -34,8 +34,10 @@ const DashBoardShowForm = ({ pathname, type }) => {
             <td colSpan="3">{store[type][pageId].content}</td>
           </StyledTr>
           <StyledTr>
-            <StyledTh>첨부파일</StyledTh>
-            <td colSpan="3">{}</td>
+            <StyledTh>{type === "lesson" ? "답변" : "첨부파일"}</StyledTh>
+            <td colSpan="3">
+              {type === "lesson" ? store[type][pageId].reply : ""}
+            </td>
           </StyledTr>
         </tbody>
       </Table>

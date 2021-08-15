@@ -1,9 +1,9 @@
 import React from "react";
 import { Table as TableComponent } from "reactstrap";
 
-const Table = ({ itemData, itemDataKeys, history }) => {
+const Table = ({ itemData, itemDataKeys, history, type }) => {
   const handleClick = (id) => {
-    history.push("/notice/" + id);
+    history.push(`/${type}/` + id);
   };
   const thead = () => {
     const result = [];
@@ -14,6 +14,7 @@ const Table = ({ itemData, itemDataKeys, history }) => {
   };
   const tbody = () => {
     const result = [];
+    console.log(itemData);
     itemData.forEach((item) => {
       const itemDataValues = [];
       for (let i = 0; i < itemDataKeys.length; i++) {

@@ -95,7 +95,7 @@ class NavBar extends React.Component {
               <div>이벤트</div>
             </div>
             <div className={"nav-submenu-container"}>
-              <div>PT 레슨 문의</div>
+              <Link to="/lesson">PT 레슨 문의</Link>
             </div>
             <div className={"nav-submenu-container"}>
               <div>무료 PT 신청</div>
