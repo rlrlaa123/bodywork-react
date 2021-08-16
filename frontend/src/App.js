@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/common/Header/Header";
 import MobileNavBar from "./components/MobileNavBar/MobileNavBar";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Carousel1 from "./components/Carousel1/Carousel1";
 import CEO from "./views/CEO/CEO";
@@ -13,6 +13,7 @@ import NoticePage from "./views/NoticePage/NoticePage";
 import NoticeShowPage from "./views/NoticeShowPage/NoticeShowPage";
 import LessonPage from "./views/LessonPage/LessonPage";
 import LessonShowPage from "./views/LessonShowPage/LessonShowPage";
+import WritePage from "./views/WritePage/WritePage";
 
 const meta = {
   name: "viewport",
@@ -30,10 +31,15 @@ function App() {
       {/* <Route path="/branch/1" component={Branch} /> */}
       <Route path="/bodywork/3" component={AlliancePage} />
       <Route path="/bodychallenger/2" component={BeforeAfterPage} />
-      <Route path="/notice" exact component={NoticePage} />
-      <Route path="/notice/:noticeId" component={NoticeShowPage} />
-      <Route path="/lesson" exact component={LessonPage} />
-      <Route path="/lesson/:lessonId" component={LessonShowPage} />
+      <Switch>
+        <Route path="/notice" exact component={NoticePage} />
+        <Route path="/notice/:noticeId" component={NoticeShowPage} />
+      </Switch>
+      <Switch>
+        <Route path="/lesson" exact component={LessonPage} />
+        <Route path="/lesson/create/" component={WritePage} />
+        <Route path="/lesson/:lessonId" component={LessonShowPage} />
+      </Switch>
     </div>
   );
 }

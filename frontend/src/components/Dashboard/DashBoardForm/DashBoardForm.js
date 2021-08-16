@@ -1,5 +1,6 @@
 import React from "react";
 // import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Table from "../../../components/common/Table/Table";
 import Pagination from "../../../components/Pagination/Pagination";
@@ -39,7 +40,11 @@ const DashBoardForm = ({ url, history, type }) => {
         type={type}
       />
       {type === "lesson" ? (
-        <Button style={{ float: "right", marginRight: "20px" }}>글쓰기</Button>
+        <Link to={`/${type}/create`}>
+          <Button style={{ float: "right", marginRight: "20px" }}>
+            글쓰기
+          </Button>
+        </Link>
       ) : null}
       <Pagination itemData={store[type]} length={store.pagination} />
     </div>
