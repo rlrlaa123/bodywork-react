@@ -56,9 +56,9 @@ const Editor = ({ title, body, onChangeField }) => {
     // 참고: https://quilljs.com/docs/api/#events
     const quill = quillInstance.current;
     quill.on("text-change", (delta, oldDelta, source) => {
-      if (source === "user") {
-        // onChangeField({ key: "body", value: quill.root.innerHTML });
-      }
+      // if (source === "user") {
+      onChangeField({ key: "body", value: quill.root.innerHTML });
+      // }
     });
   }, [onChangeField]);
 
@@ -70,7 +70,7 @@ const Editor = ({ title, body, onChangeField }) => {
     <EditorBlock>
       <TitleInput
         placeholder="제목을 입력하세요"
-        // onChange={onChangeTitle}
+        onChange={onChangeTitle}
         value={title}
       />
       <QuillWrapper>

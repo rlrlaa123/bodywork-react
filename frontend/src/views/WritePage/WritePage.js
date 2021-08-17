@@ -1,12 +1,12 @@
 import React from "react";
-import Editor from "../../components/Dashboard/write/Editor";
+import EditorContainer from "../../containers/write/EditorContainer";
 import WriteActionButtons from "../../components/Dashboard/write/WriteActionButtons";
 import Responsive from "../../components/common/Responsive/Responsive";
 
 const WritePage = () => {
   return (
     <Responsive>
-      <Editor />
+      <EditorContainer />
       <WriteActionButtons />
     </Responsive>
   );
