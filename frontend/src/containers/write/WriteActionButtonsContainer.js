@@ -2,25 +2,23 @@ import React, { useEffect } from "react";
 import WriteActionButtons from "../../components/Dashboard/write/WriteActionButtons";
 import { useSelector, useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { writePost } from "../../modules/write";
+import { writeLesson } from "../../modules/write";
 
 const WriteActionButtonsContainer = ({ history }) => {
   const dispatch = useDispatch();
-  const { title, body, tags, post, postError } = useSelector(({ write }) => ({
+  const { title, body, lesson, lessonError } = useSelector(({ write }) => ({
     title: write.title,
     body: write.body,
-    tags: write.tags,
-    post: write.post,
-    postError: write.postError,
+    lesson: write.lesson,
+    lessonError: write.lessonError,
   }));
 
   // 포스트 등록
   const onPublish = () => {
     dispatch(
-      writePost({
+      writeLesson({
         title,
         body,
-        tags,
       })
     );
   };
@@ -32,13 +30,13 @@ const WriteActionButtonsContainer = ({ history }) => {
 
   // 성공 혹은 실패 시 할 작업
   useEffect(() => {
-    if (post) {
+    if (lesson) {
       history.push("/lesson");
     }
-    if (postError) {
-      console.log(postError);
+    if (lessonError) {
+      console.log(lessonError);
     }
-  }, [history, post, postError]);
+  }, [history, lesson, lessonError]);
   return <WriteActionButtons onPublish={onPublish} onCancel={onCancel} />;
 };
 

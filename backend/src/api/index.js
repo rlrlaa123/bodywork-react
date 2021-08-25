@@ -1,8 +1,8 @@
 import Router from 'koa-router';
-import posts from './posts';
+import lessons from './lessons';
 
 const api = new Router();
 
-api.use('/posts', posts.routes());
+api.use('/lessons', lessons.routes());
 
 export default api;

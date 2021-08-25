@@ -2,40 +2,38 @@ import { createAction, handleActions } from "redux-actions";
 import createRequestSaga, {
   createRequestActionTypes,
 } from "../lib/createRequestSaga";
-import * as postsAPI from "../lib/api/posts";
+import * as lessonsAPI from "../lib/api/lessons";
 import { takeLatest } from "redux-saga/effects";
 
 const INITIALIZE = "write/INITIALIZE"; // 모든 내용 초기화
 const CHANGE_FIELD = "write/CHANGE_FIELD"; // 특정 key 값 바꾸기
 const [
-  WRITE_POST,
-  WRITE_POST_SUCCESS,
-  WRITE_POST_FAILURE,
-] = createRequestActionTypes("write/WRITE_POST"); // 포스트 작성
+  WRITE_LESSON,
+  WRITE_LESSON_SUCCESS,
+  WRITE_LESSON_FAILURE,
+] = createRequestActionTypes("write/WRITE_LESSON"); // 포스트 작성
 
 export const initialize = createAction(INITIALIZE);
 export const changeField = createAction(CHANGE_FIELD, ({ key, value }) => ({
   key,
   value,
 }));
-export const writePost = createAction(WRITE_POST, ({ title, body, tags }) => ({
+export const writeLesson = createAction(WRITE_LESSON, ({ title, body }) => ({
   title,
   body,
-  tags,
 }));
 
 // saga 생성
-const writePostSaga = createRequestSaga(WRITE_POST, postsAPI.writePost);
+const writeLessonSaga = createRequestSaga(WRITE_LESSON, lessonsAPI.writeLesson);
 export function* writeSaga() {
-  yield takeLatest(WRITE_POST, writePostSaga);
+  yield takeLatest(WRITE_LESSON, writeLessonSaga);
 }
 
 const initialState = {
   title: "",
   body: "",
-  tags: [],
-  post: null,
-  postError: null,
+  lesson: null,
+  lessonError: null,
 };
 
 const write = handleActions(
@@ -45,21 +43,21 @@ const write = handleActions(
       ...state,
       [key]: value, // 특정 key 값을 업데이트
     }),
-    [WRITE_POST]: (state) => ({
+    [WRITE_LESSON]: (state) => ({
       ...state,
-      // post와 postError를 초기화
-      post: null,
-      postError: null,
+      // lesson와 lessonError를 초기화
+      lesson: null,
+      lessonError: null,
     }),
     // 포스트 작성 성공
-    [WRITE_POST_SUCCESS]: (state, { payload: post }) => ({
+    [WRITE_LESSON_SUCCESS]: (state, { payload: lesson }) => ({
       ...state,
-      post,
+      lesson,
     }),
     // 포스트 작성 실패
-    [WRITE_POST_FAILURE]: (state, { payload: postError }) => ({
+    [WRITE_LESSON_FAILURE]: (state, { payload: lessonError }) => ({
       ...state,
-      postError,
+      lessonError,
     }),
   },
   initialState
