@@ -18,10 +18,18 @@ export const changeField = createAction(CHANGE_FIELD, ({ key, value }) => ({
   key,
   value,
 }));
-export const writeLesson = createAction(WRITE_LESSON, ({ title, body }) => ({
-  title,
-  body,
-}));
+export const writeLesson = createAction(
+  WRITE_LESSON,
+  ({ title, content, author, email, reply, view, password }) => ({
+    title,
+    content,
+    author,
+    email,
+    reply,
+    view,
+    password,
+  })
+);
 
 // saga 생성
 const writeLessonSaga = createRequestSaga(WRITE_LESSON, lessonsAPI.writeLesson);
@@ -31,7 +39,12 @@ export function* writeSaga() {
 
 const initialState = {
   title: "",
-  body: "",
+  content: "",
+  author: "",
+  email: "",
+  reply: "",
+  view: 0,
+  password: "",
   lesson: null,
   lessonError: null,
 };

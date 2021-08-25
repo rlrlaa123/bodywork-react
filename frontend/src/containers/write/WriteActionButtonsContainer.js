@@ -6,9 +6,23 @@ import { writeLesson } from "../../modules/write";
 
 const WriteActionButtonsContainer = ({ history }) => {
   const dispatch = useDispatch();
-  const { title, body, lesson, lessonError } = useSelector(({ write }) => ({
+  const {
+    title,
+    content,
+    author,
+    email,
+    view,
+    reply,
+    password,
+    lesson,
+    lessonError,
+  } = useSelector(({ write }) => ({
     title: write.title,
-    body: write.body,
+    content: write.content,
+    author: write.author,
+    email: write.email,
+    view: write.view,
+    reply: write.reply,
     lesson: write.lesson,
     lessonError: write.lessonError,
   }));
@@ -18,7 +32,12 @@ const WriteActionButtonsContainer = ({ history }) => {
     dispatch(
       writeLesson({
         title,
-        body,
+        content,
+        author,
+        email,
+        view,
+        reply,
+        password,
       })
     );
   };
