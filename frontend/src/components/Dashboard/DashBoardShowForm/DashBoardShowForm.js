@@ -11,6 +11,7 @@ const StyledTr = styled.tr`
 
 const StyledTh = styled.th`
   background-color: #f6f6f6;
+  vertical-align: middle !important;
 `;
 
 const DashBoardShowForm = ({ pathname, type }) => {
@@ -18,6 +19,12 @@ const DashBoardShowForm = ({ pathname, type }) => {
   return (
     <div>
       <Table bordered responsive>
+        <colgroup>
+          <col width="25%" />
+          <col width="25%" />
+          <col width="25%" />
+          <col width="25%" />
+        </colgroup>
         <tbody>
           <StyledTr>
             <StyledTh>제목</StyledTh>
@@ -25,7 +32,7 @@ const DashBoardShowForm = ({ pathname, type }) => {
           </StyledTr>
           <StyledTr>
             <StyledTh>조회수</StyledTh>
-            <td width="30%">{store[type][pageId].view}</td>
+            <td>{store[type][pageId].view}</td>
             <StyledTh>등록일</StyledTh>
             <td>{store[type][pageId].created_at}</td>
           </StyledTr>
