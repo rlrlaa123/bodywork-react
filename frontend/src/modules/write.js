@@ -20,9 +20,9 @@ export const changeField = createAction(CHANGE_FIELD, ({ key, value }) => ({
 }));
 export const writeLesson = createAction(
   WRITE_LESSON,
-  ({ title, content, author, email, reply, view, password }) => ({
+  ({ title, body, author, email, reply, view, password }) => ({
     title,
-    content,
+    body,
     author,
     email,
     reply,
@@ -39,7 +39,8 @@ export function* writeSaga() {
 
 const initialState = {
   title: "",
-  content: "",
+  body:
+    "<p>아래의 양식에 맞게 문의주시면 친절히 답변 도와드리도록 하겠습니다.</p><p><br></p><p>감사합니다.</p><p><br></p><p>-----레슨문의-----</p><p><br></p><p>희망지점 :</p><p><br></p><p>이름 :</p><p><br></p><p>나이 :</p><p><br></p><p>연락처 :</p><p><br></p><p>성별 :</p><p><br></p><p>운동 목적 :</p><p><br></p><p>운동 가능한 시간 :</p><p><br></p><p>문의사항 :</p>",
   author: "",
   email: "",
   reply: "",

@@ -8,7 +8,7 @@ const WriteActionButtonsContainer = ({ history }) => {
   const dispatch = useDispatch();
   const {
     title,
-    content,
+    body,
     author,
     email,
     view,
@@ -18,9 +18,10 @@ const WriteActionButtonsContainer = ({ history }) => {
     lessonError,
   } = useSelector(({ write }) => ({
     title: write.title,
-    content: write.content,
+    body: write.body,
     author: write.author,
     email: write.email,
+    password: write.password,
     view: write.view,
     reply: write.reply,
     lesson: write.lesson,
@@ -32,7 +33,7 @@ const WriteActionButtonsContainer = ({ history }) => {
     dispatch(
       writeLesson({
         title,
-        content,
+        body,
         author,
         email,
         view,

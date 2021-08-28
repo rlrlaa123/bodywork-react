@@ -22,9 +22,15 @@ export const write = async (ctx) => {
     // 객체가 다음 필드를 가지고 있음을 검증
     title: Joi.string().required(), // required()가 있으면 필수 항목
     body: Joi.string().required(),
+    author: Joi.string(),
+    email: Joi.string(),
+    reply: Joi.string().empty(''),
+    password: Joi.string(),
+    view: Joi.number(),
   });
   // 검증하고 나서 검증 실패인 경우 에러 처리
   const result = schema.validate(ctx.request.body);
+  // console.log(result); // request 실패시 debug용
 
   if (result.error) {
     ctx.status = 400; // Bad Request
@@ -32,10 +38,17 @@ export const write = async (ctx) => {
     return;
   }
 
-  const { title, body } = ctx.request.body;
+  const { title, body, author, email, password, view, reply } =
+    ctx.request.body;
+
   const lesson = new Lesson({
     title,
     body,
+    author,
+    email,
+    password,
+    view,
+    reply,
   });
 
   try {

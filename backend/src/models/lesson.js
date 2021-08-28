@@ -5,6 +5,11 @@ const { Schema } = mongoose;
 const LessonSchema = new Schema({
   title: String,
   body: String,
+  author: String,
+  email: String,
+  password: String,
+  view: Number,
+  reply: String,
   publishedDate: {
     type: Date,
     default: Date.now, // 현재 날짜를 기본값으로 지정
