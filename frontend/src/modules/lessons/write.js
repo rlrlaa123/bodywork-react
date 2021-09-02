@@ -1,8 +1,8 @@
 import { createAction, handleActions } from "redux-actions";
 import createRequestSaga, {
   createRequestActionTypes,
-} from "../lib/createRequestSaga";
-import * as lessonsAPI from "../lib/api/lessons";
+} from "../../lib/createRequestSaga";
+import * as lessonsAPI from "../../lib/api/lessons";
 import { takeLatest } from "redux-saga/effects";
 
 const INITIALIZE = "write/INITIALIZE"; // 모든 내용 초기화

@@ -18,3 +18,5 @@ export const writeLesson = ({
     view,
     password,
   });
+
+export const readLesson = (id) => client.get(`/api/lessons/${id}`);

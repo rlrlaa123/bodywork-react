@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import WriteActionButtons from "../../components/Dashboard/write/WriteActionButtons";
 import { useSelector, useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { writeLesson } from "../../modules/write";
+import { writeLesson } from "../../modules/lessons/write";
 
 const WriteActionButtonsContainer = ({ history }) => {
   const dispatch = useDispatch();
