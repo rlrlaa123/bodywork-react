@@ -31,9 +31,9 @@ const lesson = handleActions(
       ...state,
       lesson,
     }),
-    [READ_LESSON_FAILURE]: (state, { payload: lessonError }) => ({
+    [READ_LESSON_FAILURE]: (state, { payload: error }) => ({
       ...state,
-      lessonError,
+      error,
     }),
     [UNLOAD_LESSON]: () => initialState,
   },
