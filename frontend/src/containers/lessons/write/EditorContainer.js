@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
-import Editor from "../../components/Dashboard/write/Editor";
+import Editor from "../../../components/Dashboard/write/Editor";
 import { useDispatch } from "react-redux";
-import { changeField, initialize } from "../../modules/lessons/write";
+import { changeField, initialize } from "../../../modules/lessons/write";
 
 const EditorContainer = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const EditorContainer = () => {
     (payload) => dispatch(changeField(payload)),
     [dispatch]
   );
-  // 언마운트될 때 초기화
+  // 언마운트될 때 초기화@
   useEffect(() => {
     return () => {
       dispatch(initialize());

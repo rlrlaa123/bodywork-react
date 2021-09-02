@@ -1,6 +1,6 @@
 import React from "react";
-import EditorContainer from "../../containers/write/EditorContainer";
-import WriteActionButtonsContainer from "../../containers/write/WriteActionButtonsContainer";
+import EditorContainer from "../../containers/lessons/write/EditorContainer";
+import WriteActionButtonsContainer from "../../containers/lessons/write/WriteActionButtonsContainer";
 import PageTemplate from "../../components/common/PageTemplate/PageTemplate";
 import banner from "../../assets/banner2.png";
 
