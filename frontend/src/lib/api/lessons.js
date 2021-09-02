@@ -20,3 +20,6 @@ export const writeLesson = ({
   });
 
 export const readLesson = (id) => client.get(`/api/lessons/${id}`);
+
+export const listLessons = ({ page }) =>
+  client.get(`/api/lessons?page=${page}`);

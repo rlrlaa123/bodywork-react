@@ -22,7 +22,7 @@ export function* lessonSaga() {
 
 const initialState = {
   lesson: null,
-  lessonError: null,
+  error: null,
 };
 
 const lesson = handleActions(
