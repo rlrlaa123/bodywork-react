@@ -5,10 +5,10 @@ import { withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { listLessons } from "../../../modules/lessons/lessons";
 
-const LessonsListContainer = ({ location, type }) => {
+const LessonsListContainer = ({ history, location, type }) => {
   const dispatch = useDispatch();
   const { lessons, error, loading } = useSelector(({ lessons, loading }) => ({
-    lesson: lessons.lessons,
+    lessons: lessons.lessons,
     error: lessons.error,
     loading: loading["lessons/LIST_LESSONS"],
   }));
@@ -25,6 +25,8 @@ const LessonsListContainer = ({ location, type }) => {
       response={lessons}
       loading={loading}
       error={error}
+      url={location.search}
+      history={history}
       type={type}
     />
   );

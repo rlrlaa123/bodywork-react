@@ -18,11 +18,20 @@ const Table = ({ itemData, itemDataKeys, history, type }) => {
       const itemDataValues = [];
       for (let i = 0; i < itemDataKeys.length; i++) {
         itemDataValues.push(
-          <td key={itemDataKeys[i]}>{item[itemDataKeys[i]]}</td>
+          <td key={itemDataKeys[i]}>
+            {itemDataKeys[i] === "publishedDate"
+              ? new Date(item[itemDataKeys[i]]).toLocaleDateString()
+              : item[itemDataKeys[i]]}
+          </td>
         );
       }
+
       result.push(
-        <tr key={item.id} value={item.id} onClick={() => handleClick(item.id)}>
+        <tr
+          key={item._id}
+          value={item._id}
+          onClick={() => handleClick(item._id)}
+        >
           {itemDataValues}
         </tr>
       );

@@ -1,5 +1,5 @@
 import React from "react";
-// import styled from "styled-components";
+import qs from "qs";
 import { Link } from "react-router-dom";
 
 import Table from "../../../components/common/Table/Table";
@@ -7,16 +7,27 @@ import Pagination from "../../../components/Pagination/Pagination";
 import { Button } from "reactstrap";
 import store from "../../../store/store";
 
-// const StyledButton = styled.button`
-//   float: right;
-//   margin-right: 20px;
-// `;
+const filterArray = ["body", "email", "password", "reply", "__v"];
 
-const filterArray = ["content", "email", "name", "reply"];
+const DashBoardForm = ({ response, loading, error, url, history, type }) => {
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return <div>존재하지 않는 포스트입니다.</div>;
+    }
+    return <div>오류 발생!</div>;
+  }
 
-const DashBoardForm = ({ url, history, type }) => {
-  const pageNum = new RegExp("page=(.+?)").exec(url);
-  const itemDataKeys = Object.keys(store[type][0]).filter((ele) => {
+  // 로딩 중이거나 아직 포스트 데이터가 없을 때
+  if (loading || !response) {
+    console.log(error);
+    return null;
+  }
+
+  const pageNum = qs.parse(url, {
+    ignoreQueryPrefix: true,
+  }).page;
+
+  const itemDataKeys = Object.keys(response[0]).filter((ele) => {
     if (type === "lesson") {
       if (filterArray.indexOf(ele) !== -1) {
         return false;
@@ -24,15 +35,16 @@ const DashBoardForm = ({ url, history, type }) => {
     }
     return ele;
   });
+
   return (
     <div>
       <Table
         itemData={
           pageNum === null
-            ? store[type].slice(0, store.pagination)
-            : store[type].slice(
-                (pageNum[1] - 1) * store.pagination,
-                (pageNum[1] - 1) * store.pagination + store.pagination
+            ? response.slice(0, store.pagination)
+            : response.slice(
+                (pageNum - 1) * store.pagination,
+                (pageNum - 1) * store.pagination + store.pagination
               )
         }
         itemDataKeys={itemDataKeys}
