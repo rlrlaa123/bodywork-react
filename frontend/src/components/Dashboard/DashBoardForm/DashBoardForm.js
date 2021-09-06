@@ -40,7 +40,7 @@ const DashBoardForm = ({ response, loading, error, url, history, type }) => {
     <div>
       <Table
         itemData={
-          pageNum === null
+          pageNum === undefined
             ? response.slice(0, store.pagination)
             : response.slice(
                 (pageNum - 1) * store.pagination,
