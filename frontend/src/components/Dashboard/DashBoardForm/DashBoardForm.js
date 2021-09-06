@@ -1,11 +1,9 @@
 import React from "react";
-import qs from "qs";
 import { Link } from "react-router-dom";
 
 import Table from "../../../components/common/Table/Table";
-import Pagination from "../../../components/Pagination/Pagination";
 import { Button } from "reactstrap";
-import store from "../../../store/store";
+import PaginationContainer from "../../../containers/lessons/lessons/PaginationContainer";
 
 const filterArray = ["body", "email", "password", "reply", "__v"];
 
@@ -19,13 +17,9 @@ const DashBoardForm = ({ response, loading, error, url, history, type }) => {
 
   // 로딩 중이거나 아직 포스트 데이터가 없을 때
   if (loading || !response) {
-    console.log(error);
+    // console.log(error);
     return null;
   }
-
-  const pageNum = qs.parse(url, {
-    ignoreQueryPrefix: true,
-  }).page;
 
   const itemDataKeys = Object.keys(response[0]).filter((ele) => {
     if (type === "lesson") {
@@ -39,14 +33,7 @@ const DashBoardForm = ({ response, loading, error, url, history, type }) => {
   return (
     <div>
       <Table
-        itemData={
-          pageNum === undefined
-            ? response.slice(0, store.pagination)
-            : response.slice(
-                (pageNum - 1) * store.pagination,
-                (pageNum - 1) * store.pagination + store.pagination
-              )
-        }
+        itemData={response}
         itemDataKeys={itemDataKeys}
         history={history}
         type={type}
@@ -58,7 +45,7 @@ const DashBoardForm = ({ response, loading, error, url, history, type }) => {
           </Button>
         </Link>
       ) : null}
-      <Pagination itemData={store[type]} length={store.pagination} />
+      <PaginationContainer />
     </div>
   );
 };

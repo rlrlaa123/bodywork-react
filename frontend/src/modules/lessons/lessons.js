@@ -21,13 +21,15 @@ export function* lessonsSaga() {
 const initialState = {
   lessons: null,
   error: null,
+  lastPage: 1,
 };
 
 const lessons = handleActions(
   {
-    [LIST_LESSONS_SUCCESS]: (state, { payload: lessons }) => ({
+    [LIST_LESSONS_SUCCESS]: (state, { payload: lessons, meta: response }) => ({
       ...state,
       lessons,
+      lastPage: parseInt(response.headers["last-page"], 10), // 문자열을 숫자로 변환
     }),
     [LIST_LESSONS_FAILURE]: (state, { payload: error }) => ({
       ...state,

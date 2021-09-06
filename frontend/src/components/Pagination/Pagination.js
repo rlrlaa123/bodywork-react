@@ -1,43 +1,37 @@
 import React from "react";
+import styled from "styled-components";
+import qs from "qs";
 import { PaginationItem, PaginationLink } from "reactstrap";
 import { Pagination as PaginationComponent } from "reactstrap";
 import { Link } from "react-router-dom";
 
-class Pagination extends React.Component {
-  render() {
-    const { itemData, length } = this.props;
-    const pagination = () => {
-      const result = [];
-      for (let i = 1; i <= Math.ceil(itemData.length / length); i++) {
-        result.push(
-          <PaginationItem key={i}>
-            <Link to={"?page=" + i}>
-              <PaginationLink>{i}</PaginationLink>
-            </Link>
-          </PaginationItem>
-        );
-      }
-      return result;
-    };
+const PaginationBlock = styled.div`
+  padding: 0px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const buildLink = ({ page }) => {
+  const query = qs.stringify({ page });
+  return `/lesson?${query}`;
+};
 
-    return (
-      <PaginationComponent size="lg" aria-label="Page navigation example">
-        <PaginationItem>
-          <PaginationLink first href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink previous href="#" />
-        </PaginationItem>
-        {pagination()}
-        <PaginationItem>
-          <PaginationLink next href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink last href="#" />
-        </PaginationItem>
-      </PaginationComponent>
-    );
-  }
-}
+const Pagination = ({ page, lastPage }) => {
+  return (
+    <PaginationComponent size="lg" aria-label="Page navigation example">
+      <PaginationItem disabled={page === 1}>
+        <Link to={page === 1 ? "#" : buildLink({ page: page - 1 })}>
+          <PaginationLink previous />
+        </Link>
+      </PaginationItem>
+      <PaginationBlock>{page}</PaginationBlock>
+      <PaginationItem disabled={page === lastPage}>
+        <Link to={page === lastPage ? "#" : buildLink({ page: page + 1 })}>
+          <PaginationLink next />
+        </Link>
+      </PaginationItem>
+    </PaginationComponent>
+  );
+};
 
 export default Pagination;

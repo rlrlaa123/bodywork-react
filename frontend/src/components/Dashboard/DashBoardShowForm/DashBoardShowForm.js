@@ -31,7 +31,7 @@ const DashBoardShowForm = ({ response, error, loading, type }) => {
 
   // 로딩 중이거나 아직 포스트 데이터가 없을 때
   if (loading || !response) {
-    console.log(error);
+    // console.log(error);
     return null;
   }
 
