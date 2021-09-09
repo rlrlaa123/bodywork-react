@@ -4,7 +4,6 @@ import Header from "./components/common/Header/Header";
 import MobileNavBar from "./components/MobileNavBar/MobileNavBar";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
-import Carousel1 from "./components/Carousel1/Carousel1";
 import CEO from "./views/CEO/CEO";
 // import Branch from "./views/Branch/Branch";
 import AlliancePage from "./views/AlliancePage/AlliancePage";
@@ -14,6 +13,7 @@ import NoticeShowPage from "./views/NoticeShowPage/NoticeShowPage";
 import LessonPage from "./views/LessonPage/LessonPage";
 import LessonShowPage from "./views/LessonShowPage/LessonShowPage";
 import WritePage from "./views/WritePage/WritePage";
+import HomePage from "./views/HomePage/HomePage";
 
 const meta = {
   name: "viewport",
@@ -26,7 +26,7 @@ function App() {
       <MobileNavBar></MobileNavBar>
       <Header></Header>
       <NavBar></NavBar>
-      <Route path="/" component={Carousel1} exact={true} />
+      <Route path="/" component={HomePage} exact={true} />
       <Route path="/bodywork/1" component={CEO} />
       {/* <Route path="/branch/1" component={Branch} /> */}
       <Route path="/bodywork/3" component={AlliancePage} />
