@@ -14,6 +14,7 @@ import LessonPage from "./views/LessonPage/LessonPage";
 import LessonShowPage from "./views/LessonShowPage/LessonShowPage";
 import WritePage from "./views/WritePage/WritePage";
 import HomePage from "./views/HomePage/HomePage";
+import TodoForm from "./components/TestingTodoList/TodoForm";
 
 const meta = {
   name: "viewport",
@@ -23,6 +24,7 @@ const meta = {
 function App() {
   return (
     <div className="App" {...meta}>
+      <TodoForm />
       <MobileNavBar></MobileNavBar>
       <Header></Header>
       <NavBar></NavBar>
